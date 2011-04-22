@@ -1,8 +1,9 @@
-Stringr
---------
+# Stringr
 
 Small padrino application for group editing of Cocoa .strings
 localization files.
+
+## Basic usage
 
 Project uses mongodb so you have to install it. For example with
 homebrew:
