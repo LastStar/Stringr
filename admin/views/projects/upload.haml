@@ -5,4 +5,10 @@
   .content
     %h2.title
       =pat(:upload_strings_file)
+    .inner
+      -form_for :project, url(:projects, :save_upload, :id => @project.id), :multipart => true do |f|
+        =f.label pat(:strings_file)
+        =f.hidden_field :id
+        =f.file_field :file
+        =f.submit pat(:upload)
 

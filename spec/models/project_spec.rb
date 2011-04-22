@@ -13,4 +13,8 @@ describe Project do
     project.string_pairs = [StringPair.new]
     project.string_pairs.should_not be_empty
   end
+  it 'has file' do
+    project.file = File.new('spec/fixtures/test.strings')
+    project.file.should_not be_nil
+  end
 end

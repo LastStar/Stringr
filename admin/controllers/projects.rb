@@ -46,6 +46,13 @@ Admin.controllers :projects do
   end
 
   get :upload, :with => :id do
+    @project = Project.find(params[:id])
     render 'projects/upload'
+  end
+
+  post :save_upload do
+    @project = Project.find(params[:id])
+    flash[:notice] = 'File uploaded'
+    redirect url(:projects, :index)
   end
 end
