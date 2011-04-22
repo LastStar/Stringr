@@ -1,7 +1,9 @@
 class Project
   include MongoMapper::Document
 
-  # key <name>, <type>
-  
+  key :name, String
+
+  many :string_pairs
+
   timestamps!
 end
