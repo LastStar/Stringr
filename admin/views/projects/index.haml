@@ -1,0 +1,31 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:projects, :index)
+      %li=link_to pat(:new), url(:projects, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:projects)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:project, :name)
+          %th=mat(:project, :created_at)
+          %th=mat(:project, :updated_at)
+          %th.last="&nbsp;"
+        -@projects.each do |project|
+          %tr
+            %td.first=project.name
+            %td=project.created_at
+            %td=project.updated_at
+            %td.last
+              =button_to pat(:edit), url(:projects, :edit, :id => project.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:projects, :destroy, :id => project.id), :method => :delete, :class => :button_to
+              ="|"
+              =button_to pat(:upload_strings_file), url(:projects, :upload, :id => project.id), :method => :get, :class => :button_to
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")
