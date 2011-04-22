@@ -1,6 +1,6 @@
 --- 
 :orm: mongomapper
-:test: none
+:test: rspec
 :mock: none
 :script: jquery
 :renderer: haml

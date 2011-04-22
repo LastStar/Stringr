@@ -12,6 +12,8 @@ gem 'mongo_mapper', :git => "git://github.com/jnunemaker/mongomapper.git", :bran
 gem 'bson_ext', :require => "mongo"
 
 # Test requirements
+gem 'rspec', :group => "test"
+gem 'rack-test', :require => "rack/test", :group => "test"
 
 
 # Padrino
